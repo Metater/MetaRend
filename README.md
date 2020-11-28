@@ -1,2 +1,2 @@
 # MetaRend
- A monochromatic 2D matric renderer and simple game engine
+ A monochromatic 2D matrix renderer and simple game engine
