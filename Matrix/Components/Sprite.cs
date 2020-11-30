@@ -7,22 +7,24 @@ namespace MetaRend.Matrix.Components
 {
     public class Sprite : Component
     {
-        public enum Cells
-        {
-            zeroOpaque,
-            oneOpaque,
-            zeroTranslucent,
-            oneTranslucent
-        }
-        public Cells[,] sprite {get; set; }
+        public RendType.Cell[,] sprite;
+        public bool isInversionMask = false;
 
+        /// <summary>
+        /// Construct a null sprite.
+        /// </summary>
+        public Sprite() { }
+        /// <summary>
         /// Construct a sprite with width, height.
+        /// </summary>
         public Sprite(int width, int height)
         {
-            sprite = new Cells[width, height];
+            sprite = new RendType.Cell[width, height];
         }
+        /// <summary>
         /// Construct a sprite with a 2D Cells array.
-        public Sprite(Cells[,] sprite)
+        /// </summary>
+        public Sprite(RendType.Cell[,] sprite)
         {
             this.sprite = sprite;
         }
