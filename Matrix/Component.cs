@@ -28,5 +28,27 @@ namespace MetaRend.Matrix
             else
                 throw new System.ArgumentException("You have a duplicate component: ", component.GetType().ToString());
         }
+        public Component GetComponent(Type component)
+        {
+            if (component == typeof(Components.Transform))
+                throw new System.ArgumentException("Use RendObject.transform, a RendObject always has a Transform component.");
+            foreach (Component c in components)
+            {
+                if (component.GetType() == c.GetType())
+                    return c;
+            }
+            throw new System.ArgumentException("No component of type " + component.GetType().ToString() + " exists.");
+        }
+        public bool HasComponent(Type component)
+        {
+            if (component == typeof(Components.Transform))
+                throw new System.ArgumentException("Use RendObject.transform, a RendObject always has a Transform component.");
+            foreach (Component c in components)
+            {
+                if (component.GetType() == c.GetType())
+                    return true;
+            }
+            return false;
+        }
     }
 }
