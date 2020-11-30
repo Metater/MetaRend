@@ -7,44 +7,24 @@ namespace MetaRend.Matrix.Components
 {
     public class Sprite : Component
     {
-        /*
-        public bool[,] sprite
+        public enum Cells
         {
-            get
-            {
-                return null;
-                sprite.GetLength(0)
-            }
-            set
-            {
-                value
-            }
+            zeroOpaque,
+            oneOpaque,
+            zeroTranslucent,
+            oneTranslucent
         }
-        public bool transparent = true;
-        public bool[] trancparencyMap
+        public Cells[,] sprite {get; set; }
+
+        /// Construct a sprite with width, height.
+        public Sprite(int width, int height)
         {
-            get
-            {
-                return null;
-                sprite.GetLength(0)
-            }
-            set
-            {
-                value
-            }
+            sprite = new Cells[width, height];
         }
-        /// Construct a sprite with width, height and transparency.
-        public Sprite(int width, int height, bool transparent)
-        {
-            sprite = new bool[width, height];
-            this.transparent = transparent;
-        }
-        /// Construct a sprite with a 2D bool array and transparency.
-        public Sprite(bool[,] sprite, bool transparent)
+        /// Construct a sprite with a 2D Cells array.
+        public Sprite(Cells[,] sprite)
         {
             this.sprite = sprite;
-            this.transparent = transparent;
         }
-        */
     }
 }

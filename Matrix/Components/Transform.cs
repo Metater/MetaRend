@@ -6,7 +6,6 @@ namespace MetaRend.Matrix.Components
 {
     public class Transform : Component
     {
-        public int xPosition;
-        public int yPosition;
+        public RendType.Vector2Int position;
     }
 }

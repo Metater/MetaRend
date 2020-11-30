@@ -6,7 +6,6 @@ namespace MetaRend.Matrix.Components
 {
     public class Body : Component
     {
-        int xVelocity;
-        int yVelocity;
+        public RendType.Vector2Int velocity;
     }
 }
