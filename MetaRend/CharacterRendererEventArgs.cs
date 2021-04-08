@@ -4,8 +4,7 @@ using System.Text;
 
 namespace MetaRend
 {
-    public class SymbolRenderer
+    public class CharacterRendererEventArgs
     {
-
     }
 }

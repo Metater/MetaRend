@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MetaRend
 {
-    public class SymbolQueue
+    public class CharacterQueue
     {
 
     }
