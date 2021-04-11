@@ -16,6 +16,7 @@ namespace MetaRend
             foreach (string line in characterRegistryDataLines)
             {
                 string[] registryData = line.Split(' ');
+                RegisterLocalCharacterFile(registryData[0][0], registryData[1]);
             }
         }
 
