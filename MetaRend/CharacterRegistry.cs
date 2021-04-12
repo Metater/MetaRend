@@ -9,12 +9,16 @@ namespace MetaRend
     {
         private Dictionary<char, CharacterMatrix> registeredCharacters = new Dictionary<char, CharacterMatrix>();
 
-        public CharacterRegistry(string characterRegistryData)
+        private string charactersPath;
+
+        public CharacterRegistry(string charactersPath)
         {
+            this.charactersPath = charactersPath;
             registeredCharacters.Add(' ', new CharacterMatrix(8));
-            string[] characterRegistryDataLines = characterRegistryData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+            string[] characterRegistryDataLines = File.ReadAllLines(charactersPath + @"\CharacterRegistry.txt");
             foreach (string line in characterRegistryDataLines)
             {
+                Console.WriteLine(line);
                 string[] registryData = line.Split(' ');
                 RegisterLocalCharacterFile(registryData[0][0], registryData[1]);
             }
@@ -34,8 +38,7 @@ namespace MetaRend
 
         public void RegisterLocalCharacterFile(char c, string localPath)
         {
-            string localDir = Directory.GetCurrentDirectory();
-            RegisterCharacterFile(c, localDir + @"\" + localPath);
+            RegisterCharacterFile(c, charactersPath + @"\" + localPath);
         }
         #endregion Registering
 

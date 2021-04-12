@@ -4,7 +4,7 @@ namespace MetaRend
 {
     public class CharacterMatrix
     {
-        public int width;
+        public int width { get; private set; }
         public byte[] matrix { get; private set; }
 
         public CharacterMatrix(int width)
@@ -13,7 +13,7 @@ namespace MetaRend
         }
         public CharacterMatrix(string data)
         {
-            string[] rows = data.Split('\n', '\r');
+            string[] rows = data.Split('\n');
             width = rows[0].Length;
             matrix = new byte[width];
             for (int x = 0; x < width; x++)
